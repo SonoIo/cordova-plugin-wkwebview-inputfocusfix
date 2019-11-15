@@ -1,5 +1,21 @@
-# THIS PLUGIN IS DEPRECATED!
+# Cordova plugin WKWebView input focus fix
 
-This plugin was introduced as a temporary fix for the input focusing issue raised on main WKWebView repositories of Apache and Ionic. As the changes are merged to the main repositories - https://github.com/apache/cordova-plugin-wkwebview-engine/pull/37/ and https://github.com/ionic-team/cordova-plugin-wkwebview-engine/pull/171, the plugin is deprecated and has no effect on fixing any focus issues anymore. 
+Cordova plugin for fixing auto focus issue of html elements on WKWebView.
 
-## If you're facing issues with the input focusing, simply upgrade your wkwebview cordova plugin to it's latest version. And if your issue still exists after the upgrade, open an issue on the main wkwebview cordova repo: https://github.com/apache/cordova-plugin-wkwebview-engine/issues.  
+Currently WKWebView doesn't focus on elements on js .focus() calls. This plugin is extension of CDVWKWebViewEngine class which does ugly swizzling for the focus. Original idea is on: https://github.com/Telerik-Verified-Plugins/WKWebView/commit/04e8296adeb61f289f9c698045c19b62d080c7e3#L609-L620
+
+# Installation
+
+Install the plugin by running:
+
+```
+cordova plugin add cordova-plugin-wkwebview-inputfocusfix
+```
+
+# Changelog
+
+- Added support to iOS 13. See https://stackoverflow.com/questions/32449870/programmatically-focus-on-a-form-in-a-webview-wkwebview
+
+# Lifetime
+
+The plugin should be out of use once https://github.com/apache/cordova-plugin-wkwebview-engine/pull/37/ and https://github.com/ionic-team/cordova-plugin-wkwebview-engine/pull/171 is merged. Please watch main WKWebView repositories for the merge.
